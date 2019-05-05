@@ -16,14 +16,13 @@ jQuery(document).ready(function($) {
 
 	function RightToLeftMoveSlider(){
 		RightToLeftMoveInterval = setInterval(()=>{
+			$('.slides').animate({
+				'margin-left' : '-='+(width+15)
+			},animationSpeed);
+			slideCount++;
 			if(slidableCount == slideCount){
 				clearInterval(RightToLeftMoveInterval);
 				LeftToRightMoveSlide();
-			}else{
-				$('.slides').animate({
-					'margin-left' : '-='+(width+15)
-				},animationSpeed);
-				slideCount++;
 			}
 		},pause);		
 	}
